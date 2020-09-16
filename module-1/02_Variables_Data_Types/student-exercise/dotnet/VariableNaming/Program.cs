@@ -637,7 +637,7 @@ namespace VariableNaming
             double percentOfTripCompleted = distanceTrainTravelled / distanceNYToChicago;
 
 
-            Console.WriteLine("The train has travelled " + (percentOfTripCompleted*100) + " percent of it\'s trip from New York to Chicago.");
+            Console.WriteLine("The train has travelled " + (int)(percentOfTripCompleted*100) + " percent of it\'s trip from New York to Chicago.");
 
 
         }
