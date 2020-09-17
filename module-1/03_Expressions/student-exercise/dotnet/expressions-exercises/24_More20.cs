@@ -17,6 +17,23 @@ namespace Exercises
          */
         public bool More20(int n)
         {
+            bool nonNegNum = (n >= 0);
+
+            if (nonNegNum)
+            {
+                if (n % 20 == 1)
+                {
+                    return true;
+                }
+                else if (n % 20 == 2)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
             return false;
         }
 

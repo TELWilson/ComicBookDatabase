@@ -20,6 +20,31 @@ namespace Exercises
          */
         public string AlarmClock(int day, bool vacation)
         {
+            bool weekDay = (day == 1 || day == 2 || day == 3 || day == 4 || day == 5);
+            bool weekEnd = (day == 0 || day == 6);
+
+            if (weekDay)
+            {
+                if (!vacation)
+                {
+                    return "7:00";
+                }
+                else
+                {
+                    return "10:00";
+                }
+            }
+            if (weekEnd)
+            {
+                if (!vacation)
+                {
+                    return "10:00";
+                }
+                else
+                {
+                    return "off";
+                }
+            }
             return "";
         }
 

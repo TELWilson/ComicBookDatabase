@@ -17,7 +17,19 @@ namespace Exercises
         */
         public bool HasTeen(int a, int b, int c)
         {
-            return false;
+            bool isTeenA = (a >= 13 && a <= 19);
+            bool isTeenB = (b >= 13 && b <= 19);
+            bool isTeenC = (c >= 13 && c <= 19);
+
+            if (isTeenA || isTeenB || isTeenC)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+           
         }
 
     }

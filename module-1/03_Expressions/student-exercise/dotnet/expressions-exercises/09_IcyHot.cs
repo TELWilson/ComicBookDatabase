@@ -16,6 +16,13 @@ namespace Exercises
          */
         public bool IcyHot(int temp1, int temp2)
         {
+            bool hotTemp = (temp1 > 100 || temp2 > 100);
+            bool iceTemp = (temp1 < 0 || temp2 < 0);
+
+            if (hotTemp && iceTemp)
+            {
+                return true;
+            }
             return false;
         }
 

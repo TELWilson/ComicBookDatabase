@@ -17,6 +17,22 @@ namespace Exercises
          */
         public bool Old35(int n)
         {
+            bool nonNegNum = (n >= 0);
+
+            if (nonNegNum)
+            {
+                if (n % 3 == 0)
+                {
+                    if (n % 5 == 0)
+                    {
+                        return false;
+                    }return true;
+                }
+                if (n % 5 == 0)
+                {
+                    return true;
+                }
+            }
             return false;
         }
 

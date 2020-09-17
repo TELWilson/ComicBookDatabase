@@ -16,6 +16,13 @@ namespace Exercises
          */
         public bool In1020(int a, int b)
         {
+            bool valueOne = (a >= 10 && a <= 20);
+            bool valueTwo = (b >= 10 && b <= 20);
+
+            if (valueOne || valueTwo)
+            {
+                return true;
+            }
             return false;
         }
 

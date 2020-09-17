@@ -17,6 +17,14 @@ namespace Exercises
          */
         public bool In3050(int a, int b)
         {
+            //bool firstValue = ((a >= 30 && a <= 40) || (a >= 40 && a <= 50));
+            //bool secondValue = ((b >= 30 && b <= 40) || (b >= 40 && b <= 50));
+
+            //if (firstValue || secondValue)
+            //{
+            //    return true;
+            //}
+
             return false;
         }
 

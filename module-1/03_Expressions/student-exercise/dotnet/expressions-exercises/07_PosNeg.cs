@@ -17,7 +17,30 @@ namespace Exercises
        */
         public bool PosNeg(int a, int b, bool negative)
         {
-            return false;
+            //bool aIsPositive = (a >= 0);
+            //bool bIsPositive = (b >= 0);
+            //bool aAndBNegative = ()
+
+            if (negative)
+            {
+                if (a <= 0 && b <= 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                if ((a <= 0 && b >= 0) || (a >= 0 && b <= 0))
+                {
+                    return true;
+                }
+
+                return false;
+            }
         }
 
     }

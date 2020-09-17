@@ -21,6 +21,22 @@ namespace Exercises
         */
         public int DateFashion(int you, int date)
         {
+            bool badScore = (you <= 2 || date <= 2);
+            bool goodScore = (you >= 8 || date >= 8);
+            bool okayScore = ((you >= 3 && you <= 7) || (date >= 3 && you <= 7));
+
+            if (badScore)
+            {
+                return 0;
+            }
+            if (goodScore)
+            {
+                return 2;
+            }
+            if (okayScore)
+            {
+                return 1;
+            }
             return 0;
         }
 
