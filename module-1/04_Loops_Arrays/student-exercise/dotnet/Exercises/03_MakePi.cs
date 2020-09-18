@@ -14,7 +14,9 @@ namespace Exercises
          */
         public int[] MakePi()
         {
-            return new int[] { };
+            int[] valuePi = { 3, 1, 4 };
+            
+            return valuePi;
         }
 
     }
