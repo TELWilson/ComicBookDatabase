@@ -19,7 +19,24 @@ namespace Exercises
          */
         public int TeaParty(int tea, int candy)
         {
+            int doubleCandy = (candy * 2);
+            int doubleTea = (tea * 2);
+
+            if (tea < 5 || candy < 5)
+            {
+                return 0;
+            }
+            if (tea >= 5 && candy >= 5)
+            {
+                if ((tea >= 2 * candy) || (candy >= 2 * tea))
+                {
+                    return 2;
+                }
+                return 1;
+            }
+
             return 0;
+
         }
 
     }

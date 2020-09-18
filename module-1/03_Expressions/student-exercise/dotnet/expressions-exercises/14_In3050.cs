@@ -17,15 +17,24 @@ namespace Exercises
          */
         public bool In3050(int a, int b)
         {
-            //bool firstValue = ((a >= 30 && a <= 40) || (a >= 40 && a <= 50));
-            //bool secondValue = ((b >= 30 && b <= 40) || (b >= 40 && b <= 50));
+            // My struggle here, I think, is that both ranges include 40 and I don't know how to separate 
+            //the 40 in the first range from the 40 in the second range.
+            bool num30s = ((a >= 30 && a <= 40) && (b >= 30 && b <= 40));
+            bool num40s = ((a >= 40 && a <= 50) && (b >= 40 && b <= 50));
 
             //if (firstValue || secondValue)
             //{
             //    return true;
             //}
 
-            return false;
+            if (num30s || num40s)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
     }

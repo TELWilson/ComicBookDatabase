@@ -17,6 +17,32 @@ namespace Exercises
       */
         public int Max1020(int a, int b)
         {
+            bool positiveVal = (a >= 0 && b >= 0);
+            bool valueA = (a >= 10 && a <= 20);
+            bool valueB = (b >= 10 && b <= 20);
+
+            if (valueA || valueB)
+                {
+                if (!valueA) 
+                {
+                    return b;
+                }
+                if (!valueB)
+             
+                {
+                    return a;
+                }
+                if (a > b)
+                {
+                    return a;
+                }   
+                    return b;
+                 
+            }
+        
+            
+
+
             return 0;
         }
 

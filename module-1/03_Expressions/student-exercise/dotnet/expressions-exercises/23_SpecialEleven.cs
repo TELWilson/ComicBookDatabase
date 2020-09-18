@@ -17,15 +17,21 @@ namespace Exercises
          SpecialEleven(24) → false
          */
         public bool SpecialEleven(int n)
-       {
-        //    int eleven = 11;
-        //    if (n % eleven = 0)
-        //    {
-        //        return true;
-        //    }
-        //    if (n)
-         return false;
-        }
+        {
+            if (n % 11 == 0)
+            {
+                return true;
+            }
+            if (n % 11 == 1)
+            {
+                return true;
+            }
         
+            return false;
+            
+
+
+        }
+
     }
 }
