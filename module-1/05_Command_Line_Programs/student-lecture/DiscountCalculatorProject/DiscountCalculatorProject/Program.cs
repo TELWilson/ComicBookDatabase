@@ -6,6 +6,17 @@ namespace DiscountCalculatorProject
     {
         static void Main(string[] args)
         {
+
+            for(int i = 0; i < 10; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    Console.WriteLine(i);
+
+                }
+                
+            }
+
             Console.WriteLine("Welcome to .NET's Dicount Calculator Project");
 
             string author = "Cohort 12 .NET (CBUS)";
