@@ -17,6 +17,16 @@ namespace Exercises
          */
         public int CountEvens(int[] nums)
         {
+            //I already have an array, right?  Do I need to create a new one?  The answer should only be a single value
+            int numEven = 0;
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] % 2 == 0)
+                {
+                    numEven++;  //Is the problem I have not used this variable in the loop?
+                }
+            }
+
             return 0;
         }
 

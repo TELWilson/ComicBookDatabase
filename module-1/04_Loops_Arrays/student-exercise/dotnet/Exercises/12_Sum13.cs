@@ -20,6 +20,27 @@ namespace Exercises
          */
         public int Sum13(int[] nums)
         {
+            int sum = 0;
+
+            for(int i = 0; i < nums.Length; i++)
+            {
+                //while (nums[i] != 13)
+                //{
+                //    sum = sum + nums[i]
+                //}
+                sum = sum + nums[i];
+
+                if (nums[i] == 13)
+                {
+                    break;
+                }
+                return sum;
+            }
+            if (nums.Length == 0)
+            {
+                return 0;
+            }
+   
             return 0;
         }
 
