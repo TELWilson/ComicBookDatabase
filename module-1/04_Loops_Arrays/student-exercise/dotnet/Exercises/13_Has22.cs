@@ -16,6 +16,8 @@ namespace Exercises
          */
         public bool Has22(int[] nums)
         {
+
+            // If nums[i] = 2
             return false;
         }
 

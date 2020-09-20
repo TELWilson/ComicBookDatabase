@@ -21,9 +21,13 @@ namespace Exercises
             int numEven = 0;
             for (int i = 0; i < nums.Length; i++)
             {
-                if (nums[i] % 2 == 0)
+                if (nums[i] % 2 == 0) //Do I need to make this equal to a variable?
                 {
-                    numEven++;  //Is the problem I have not used this variable in the loop?
+                    numEven++;
+
+                    {
+                        numEven--;
+                    }
                 }
             }
 

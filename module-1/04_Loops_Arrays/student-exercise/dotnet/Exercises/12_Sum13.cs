@@ -28,7 +28,7 @@ namespace Exercises
                 //{
                 //    sum = sum + nums[i]
                 //}
-                sum = sum + nums[i];
+                sum = sum + nums[i]; // There has to be something going wrong with this equation.
 
                 if (nums[i] == 13)
                 {

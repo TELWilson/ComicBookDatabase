@@ -16,6 +16,16 @@ namespace Exercises
          */
         public bool Lucky13(int[] nums)
         {
+            for(int i = 0; i < nums.Length; i++) //starting a for loop to cycle through array values
+            {
+                if (nums[i] == 1 || nums[i] == 3)  //if the value is 1 or 3, return false
+                {
+                    return false;
+                }
+                return true; //failed test may be because I'm leaving the loop at the first false?
+            }
+
+
             return false;
         }
 
