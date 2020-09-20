@@ -18,7 +18,7 @@ namespace Exercises
         {
             int first = 0;
             int second = 0;
-            int next;
+           
             bool result = false;
             for (int i = 0; i < nums.Length - 1; i++)
             {
