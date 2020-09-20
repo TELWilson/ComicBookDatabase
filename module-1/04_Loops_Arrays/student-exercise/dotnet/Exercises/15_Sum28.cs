@@ -16,7 +16,27 @@ namespace Exercises
          */
         public bool Sum28(int[] nums)
         {
-            return false;
+            //Need a for loop, want to run through all elements.
+            int sumTwos = 0;
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] == 2)  //Need to evaluate if the element's value is 2
+                {
+                    sumTwos += nums[i]; //Need to add all element's with a value of two and keep track of the sum
+                    
+                } 
+                // need to evaluate the final sum against the value of 8, return true if its true
+            }
+
+            if (sumTwos == 8)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
         }
 
     }

@@ -16,20 +16,25 @@ namespace Exercises
          Sum2([1, 1, 1, 1]) → 2
          */
         public int Sum2(int[] nums)
-        {
-            if (nums[nums.Length-1] == 0)
+        { // I only care about the values in the first two elements, so I shouldn't need to loop through?
+            if (nums.Length >= 2)
+            {
+                return nums[0] + nums[1];
+            }
+            //if (nums.Length == 2)
+            //{  Already accounted for in the if statement above
+            //    return nums[0] + nums[1];
+            //}
+           
+           else if (nums.Length == 0)
             {
                 return 0;
             }
-            if (nums[nums.Length-1] == 2)
+            else //only remaining condition does not need to be described
             {
-                return nums[0] + nums[1];
+                return nums[0];
             }
-            if (nums[nums.Length-1]>= 2)
-            {
-                return nums[0] + nums[1];
-            }
-            return 0;
+            
         } 
 
     }

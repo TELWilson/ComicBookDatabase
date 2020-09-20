@@ -22,26 +22,32 @@ namespace Exercises
         {
             int sum = 0;
 
-            for(int i = 0; i < nums.Length; i++)
+            for (int i = 0; i < nums.Length; i++)
             {
                 //while (nums[i] != 13)
                 //{
                 //    sum = sum + nums[i]
                 //}
-                sum = sum + nums[i]; // There has to be something going wrong with this equation.
+                // There has to be something going wrong with this equation.
 
                 if (nums[i] == 13)
                 {
-                    break;
+                    i++; //allows us to skip over the next element
+                    continue;
+
                 }
-                return sum;
+                else
+                {
+                    sum = sum + nums[i];
+                }
             }
-            if (nums.Length == 0)
-            {
-                return 0;
-            }
+            //} Unnecessary because sum is already set to 0 and for loop is never executed for empty array.
+            //if (nums.Length == 0)
+            //{
+            //    return 0;
+            //}
    
-            return 0;
+            return sum;
         }
 
     }

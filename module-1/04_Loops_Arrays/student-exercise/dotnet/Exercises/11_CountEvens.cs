@@ -23,15 +23,14 @@ namespace Exercises
             {
                 if (nums[i] % 2 == 0) //Do I need to make this equal to a variable?
                 {
-                    numEven++;
+                    numEven++; // come up with a way to count how many even values there are
 
-                    {
-                        numEven--;
-                    }
-                }
+                      //The loop must have stopped after the first element since it was even
+                } //what did I do that told it to stop running through the loop?
             }
+            return numEven;
 
-            return 0;
+            
         }
 
     }
