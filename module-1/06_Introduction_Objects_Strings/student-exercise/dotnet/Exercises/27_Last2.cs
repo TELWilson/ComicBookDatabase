@@ -16,15 +16,24 @@ namespace Exercises
          Last2("axxxaaxx") → 2
          */
         public int Last2(string str)
-        {  // must need some kind of loop
+        {  
             int count = 0;
             int lastTwo = str.Length - 2;
-            //char second = str.Substring(lastTwo, 1); TRYING TO GET THE CHAR AT THE SECOND TO LAST & LAST
-            for (int i = 0; i < str.Length; i++)
+            
+            if (str.Length > 3)
             {
-                //if (str.Substring(lastTwo, 1) = str[i] && str.Substring(lastTwo+1, 1) = str[i + 1])
+                for (int i = 0; i <= str.Length - 3; i++)
+                {
+
+                    string endString = (str.Substring(lastTwo));
+                    string shortString = str.Substring(i, 2);
+                    if (endString == shortString)
+                    {
+                        count++;
+                    }
+                } 
             }
-            return 0;
+            return count;
         }
     }
 }

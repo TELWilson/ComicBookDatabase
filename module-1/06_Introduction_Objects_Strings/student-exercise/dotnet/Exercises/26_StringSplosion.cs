@@ -18,12 +18,16 @@ namespace Exercises
         {// split into chars?  Then return first char + first two chars + first three chars + first four chars + ...
             // It is unclear if you stop at 4 chars or keep running through if your string is 50 chars long
             // probably needs a loop
-            int character = 0;
+            //int character = 0;
+            //int stringLength = str.Length ;
+            //string result = "";
+           string newString = "";
             for (int i = 0; i < str.Length ; i++)
             {
 
+                newString += str.Substring(0, i+1);
             }
-            return null;
+            return newString;
         }
     }
 }

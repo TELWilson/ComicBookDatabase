@@ -16,11 +16,13 @@ namespace Exercises
          */
         public string StringBits(string str)
         {
-            for (int i = 0; i < str.Length; i++)  //need to loop through the string
+            string oddString = "";
+            for (int i = 0; i < str.Length; i += 2)  //need to loop through the string
             {
+                oddString += str[i];
 
             }
-            return null;
+            return oddString;
         }
     }
 }

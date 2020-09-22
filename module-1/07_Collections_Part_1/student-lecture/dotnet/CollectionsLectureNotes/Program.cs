@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CollectionsLectureNotes
 {
@@ -6,15 +7,23 @@ namespace CollectionsLectureNotes
     {
         static void Main(string[] args)
         {
+
+            Console.WriteLine("Hello Namespaces");
             // LIST<T>
             //
             // Lists allow us to hold collections of data. They are declared with a type of data that they hold
             // only allowing items of that type to go inside of them.
 
             // Creating lists of integers
-
+            List<int> yearsLived = new List<int>();
+            // creates a new list
+            // assigns it a location
+            // assigns it a variable type
 
             // Creating lists of strings
+            List<string> movies = new List<string>();
+            List<string> favoriteMovies = new List<string>();
+            List<string> otherMovies = movies;
 
             /////////////////
 
@@ -24,38 +33,105 @@ namespace CollectionsLectureNotes
             // OBJECT EQUALITY
             //////////////////
 
+            movies.Add("Hook");
+            favoriteMovies.Add("Hook");
+
             // Check reference equality
 
+            bool areMoviesEqual = movies == favoriteMovies;
+            Console.WriteLine("Movies are equal == " + areMoviesEqual);
+
             // Compare two variables pointed at the same list
+
+            
+            if (otherMovies == movies)
+            {
+                Console.WriteLine("They be the same movies, yo!");
+            }
 
             /////////////////
             // ADDING ITEMS
             /////////////////
 
             // Adding items one at a time to each list
+            yearsLived.Add(2019);
+            yearsLived.Add(2020);
+            yearsLived.Add(2004);
+            yearsLived.Insert(0, 1980);
+
+            Console.WriteLine(yearsLived.Count);
+
+            movies.Add("Sneakers");
+            movies.Add("War Games");
+            //movies.Add(1984);
 
             // ADDING MULTIPLE ITEMS
+            int[] years = { 1990, 1991, 1992, 1993, 1994 };
+            yearsLived.AddRange(years);
+
 
             // LIST INITIALIZER
+            List<string> colors = new List<string>()
+            {
+                "Steel Blue",
+                "Beige",
+                "Transparent",
+                "Dark Clear"
+            };
+
+
+            Console.WriteLine(yearsLived.Count);
+
 
             //////////////////
             // ACCESSING BY INDEX
             //////////////////
 
+            string warGames = movies[1];
 
+            movies[0] = "The Sound of Music";
+
+            Console.WriteLine(warGames);
+
+            Console.WriteLine(movies);
+
+            for(int i = 0; i < movies.Count; i++)
+            {
+                string m = movies[i];
+
+                Console.WriteLine(m);
+            }
 
             ///////////////////
             // ACCESSING WITH FOREACH
             ///////////////////
 
+            foreach (string movie in movies)
+            {
+                Console.WriteLine(movie);  // same as what starts at line 98
+            }
+
+            List<int> evenYears = new List<int>();
+            foreach (int y in yearsLived)
+            {
+                if (y % 2 == 0)
+                {
+                    evenYears.Add(y);
 
 
+                }
+
+                foreach (int y in evenYears)
+                {
+                    Console.WriteLine(y);
+                }
+            }
             ////////////////////
             // ADDITIONAL LIST<T> METHODS
             ////////////////////
 
             // Contains
-
+            Console.WriteLine("Is movie present?" + movies.Contains("Sneakers"));
             // IndexOf
 
             // Insert

@@ -16,16 +16,23 @@ namespace Exercises
          */
         public bool DoubleX(string str)
         {
-            
-            
 
-            for (int i = 0; i < str.Length; i++)
+
+
+            for (int i = 0; i < str.Length - 1; i++)
             {
-                if ( str[i] == 'x' && str[i + 1] == 'x')
+                if (str[i] == 'x')
                 {
-                    return true;
+                    if (str[i + 1] == 'x')
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
-                // must need to account for a string length of 0 and 1?  Throw out of range exception
+
             }
             return false;
         }
