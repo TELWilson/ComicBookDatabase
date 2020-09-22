@@ -17,7 +17,10 @@ namespace Exercises
          */
         public string ExtraEnd(string str)
         {
-            return null;
+            string newString;
+
+            newString = str.Substring(str.Length - 2, 2); // want to use the startIndex to start at the second to last position and run to the end.
+            return (newString + newString + newString);
         }
     }
 }

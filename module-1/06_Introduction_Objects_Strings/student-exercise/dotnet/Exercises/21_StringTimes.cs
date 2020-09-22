@@ -16,7 +16,12 @@ namespace Exercises
          */
         public string StringTimes(string str, int n)
         {
-            return null;
+            string longString = ""; // setting up the new string
+            for (int i = 0; i < n; i++) // using for loop to run through the value of n
+            {
+                longString = longString + str; // adding another str each time
+            }
+            return longString;
         }
     }
 }

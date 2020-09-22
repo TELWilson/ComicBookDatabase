@@ -16,6 +16,10 @@ namespace Exercises
          */
         public string StringBits(string str)
         {
+            for (int i = 0; i < str.Length; i++)  //need to loop through the string
+            {
+
+            }
             return null;
         }
     }

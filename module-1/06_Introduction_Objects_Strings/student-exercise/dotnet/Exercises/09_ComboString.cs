@@ -18,7 +18,26 @@ namespace Exercises
         */
         public string ComboString(string a, string b)
         {
-            return null;
+            //int aString = a.Length;
+            //int bString = b.Length;
+            
+            
+            if (a.Length > b.Length) //We need to check the length of each string
+            {
+                string shortString = b;  // problem, currently assigning value to null
+                string longString = a; // trying to call whichever string is larger a long and shorter short.
+                return (shortString + longString + shortString);
+               
+            }
+            else
+            {
+                string shortString = b;
+                string longString = a;
+                return (longString + shortString + longString);
+            }
+
+
+
         }
     }
 }

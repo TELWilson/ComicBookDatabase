@@ -17,7 +17,11 @@ namespace Exercises
          */
         public string NonStart(string a, string b)
         {
-            return null;
+            int aLength = a.Length-1; //Finding the lengths of the strings to use in the length part of the .substring
+            int bLength = b.Length-1;
+
+
+            return (a.Substring(1, aLength)+b.Substring(1, bLength));
         }
     }
 }

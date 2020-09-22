@@ -18,7 +18,15 @@ namespace Exercises
          */
         public bool HasBad(string str)
         {
+            string badString = "bad";
+            int index = str.IndexOf("bad");
+            if (index <= 1 && index >= 0)
+            {
+                return true;
+            }
             return false;
         }
+
     }
 }
+

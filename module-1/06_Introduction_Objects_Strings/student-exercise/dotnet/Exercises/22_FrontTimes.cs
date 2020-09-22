@@ -17,7 +17,39 @@ namespace Exercises
          */
         public string FrontTimes(string str, int n)
         {
-            return null;
+
+            string longString = ""; // setting up the new string we will create with our copies
+            string frontString = ""; // setting up a new string for the front three chars
+            if (str.Length == 2) // if your length is 2, you need to return the first two chars on repeat
+            {
+                str = frontString = str.Substring(0, 2);
+                for (int i = 0; i < n; i++) // using for loop to run through the value of n
+                {
+                    longString = longString + frontString; // adding another str each time
+                }
+            }
+            return longString;
+
+
+            if (str.Length == 1) // if your length is 1, you need to return the first char on repeat
+            {
+                str = frontString = str.Substring(0, 1);
+                for (int i = 0; i < n; i++) // using for loop to run through the value of n
+                {
+                    longString = longString + frontString; // adding another str each time
+                }
+            }
+            return longString;
+
+
+            if (str.Length >= 3)
+
+                for (int i = 0; i < n; i++) // using for loop to run through the value of n
+                {
+                    str = frontString = str.Substring(0, 3);
+                    longString = longString + frontString; // adding another str each time
+                }
+            return longString;
         }
 
     }

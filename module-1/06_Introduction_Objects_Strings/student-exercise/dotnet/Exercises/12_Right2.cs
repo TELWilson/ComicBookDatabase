@@ -16,8 +16,13 @@ namespace Exercises
          Right2("Hi") → "Hi"
          */
         public string Right2(string str)
-        {
-            return null;
+        { //need to make two new strings that are substrings of the original
+            int strLength = str.Length - 2; //finding the length value for the substring for the new remainString
+            string lastTwo = str.Substring(strLength, 2); //creating a new string of the last two chars
+            string remainString = str.Substring(0, strLength);  // creating a new string of the remaining chars
+
+
+            return (lastTwo + remainString);
         }
     }
 }

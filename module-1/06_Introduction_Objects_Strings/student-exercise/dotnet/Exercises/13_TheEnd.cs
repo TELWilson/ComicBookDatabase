@@ -17,7 +17,12 @@ namespace Exercises
         */
         public string TheEnd(string str, bool front)
         {
-            return null;
+            int length = str.Length - 1; // need to know the length of the string to detemine the index of the last char
+            if (front)  // front is true
+            {
+                return str.Substring(0, 1);  // returns the first character
+            }
+            return str.Substring(length ,1) ;  // returns the last character
         }
     }
 }

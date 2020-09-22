@@ -17,7 +17,13 @@ namespace Exercises
          */
         public string WithoutEnd2(string str)
         {
-            return null;
+            if (str.Length > 2) // when the string is longer than 2 chars
+            {
+                int stringLength = str.Length - 2; // determining the index of the second to last char
+
+                return str.Substring(1, stringLength); // dropping the first char and returning the all but the last char
+            }
+            return ""; // if the length is less than 2, the return will be empty.
         }
     }
 }

@@ -16,7 +16,10 @@ namespace Exercises
          */
         public string FirstHalf(string str)
         {
-            return null;
+            // If statement?  But its given as an even, so you shouldn't have to check.
+            int halfString = str.Length;
+
+            return str.Substring (0, halfString/2);
         }
     }
 }

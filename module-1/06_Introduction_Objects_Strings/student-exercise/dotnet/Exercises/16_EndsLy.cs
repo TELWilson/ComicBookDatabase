@@ -16,7 +16,17 @@ namespace Exercises
          */
         public bool EndsLy(string str)
         {
+            if (str.Length >= 2)
+            {
+                int secFromEnd = str.Length - 2; // finding the index value for the second from the last char
+                if (str.Substring(secFromEnd, 2) == "ly")
+                {
+                    return true;
+                }
+                return false;
+            }
             return false;
         }
+        
     }
 }
