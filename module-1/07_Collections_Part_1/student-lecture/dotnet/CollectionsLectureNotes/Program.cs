@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CollectionsLectureNotes
 {
@@ -131,22 +132,54 @@ namespace CollectionsLectureNotes
             ////////////////////
 
             // Contains
-            Console.WriteLine("Is movie present?" + movies.Contains("Sneakers"));
+            Console.WriteLine("Is movie present? " + movies.Contains("Sneakers"));
+
             // IndexOf
+            int index = movies.IndexOf("Sneakers");
+            if (index >= 0)
+            {
+                Console.WriteLine("Index of movie = " + index);
+            }
+            else
+            {
+                Console.WriteLine("I couldn't find the movie!!!");
+            }
 
             // Insert
+            movies.Insert(index, "Serenity");
 
+            // Insert
+            movies.Insert(index, "Serenity");
             // Remove
+            movies.Remove("The Sound of Music");
 
             // List to Array
 
+            string[] moviesArray = movies.ToArray();
+            movies.Add("Cats");
             // Array to List
+
+            int[] favoriteNumbers = { 7, 13, 11, 42 };
+            List<int> numbersList = favoriteNumbers.ToList();
 
             ////////////////////////
             // SORT / REVERSE
             ////////////////////////
 
+            yearsLived.Sort();
 
+            foreach(int year in yearsLived)
+            {
+                Console.WriteLine(year);
+            }
+
+            movies.Sort(); // alphabetical order
+            movies.Reverse(); // z-a order
+
+            foreach (string movie in movies)
+            {
+                Console.WriteLine(movie);
+            }
 
             // QUEUE <T>
             //
@@ -154,30 +187,55 @@ namespace CollectionsLectureNotes
             // With Queues, we Enqueue (add) and Dequeue (remove) items.
 
 
+            Queue<string> episodesToWatch = new Queue<string>();
+
+
             /////////////////////
             // PROCESSING ITEMS IN A QUEUE
             /////////////////////
 
             // Enqueue
+            episodesToWatch.Enqueue("The one where he gets a compiler error");
+            episodesToWatch.Enqueue("The one where they ship the fix");
+            episodesToWatch.Enqueue("The one where they delete all the user's data");
+
+            Console.WriteLine(episodesToWatch.Count);
+
 
             // Loop through and Dequeue
+            while (episodesToWatch.Count > 0)
+                {
+                string nextEpisode = episodesToWatch.Dequeue();
 
+                Console.WriteLine("Up next is " + nextEpisode);
+            }
 
             // STACK <T>
             //
             // Stacks are another type of data structure that follow Last-In First-Out (LIFO).
             // With Stacks, we Push (add) and Pop (remove) items. 
 
+            Stack<string> books = new Stack<string>();
+
 
             ////////////////////
             // PUSHING ITEMS TO THE STACK
             //////////////////// 
 
+            books.Push("Eloquent JavaScript");
+            books.Push("Cracking the COding Interview");
+            books.Push("Intro to Phaser.js");
 
+            Console.WriteLine(books.Count);
 
             ////////////////////
             // POPPING THE STACK
             ////////////////////
+            while (books.Count > 0)
+            {
+                string nextBook = books.Pop();
+                Console.WriteLine("Time to read " + nextBook);
+            }
 
             ////////////////////
             // SWITCH STATEMENTS

@@ -17,11 +17,14 @@ namespace Exercises
          */
         public List<string> No4LetterWords(string[] stringArray)
         {
-            List<string> result = new List<string>();
+            List<string> result = new List<string>();  // create the list to return
 
-                foreach(string value in stringArray)
+            foreach (string value in stringArray) // create a loop
+            {
+                if (value.Length != 4) // determine if the string contains 4 characters
                 {
-                // TODO: If its not a 4 letter word, add it to the result .Length
+                    result.Add(value); //trying to add the string back to the list
+                }
             }
             return result;
         }

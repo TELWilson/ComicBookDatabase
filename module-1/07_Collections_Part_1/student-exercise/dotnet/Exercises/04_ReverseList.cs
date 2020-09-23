@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,17 @@ namespace Exercises
          */
         public List<string> ReverseList(List<string> objectList)
         {
-            return null;
+
+            // objectList.Reverse ();
+            //return objectList
+            Stack<string> newStack = new Stack<string>(); //create empty stack
+           
+            foreach (string value in objectList)  // separating strings to variables called values
+            {
+                newStack.Push(value);  // adding values to the new stack
+            }
+
+            return newStack.ToList();  // taking the stack back to a list.
         }
 
     }

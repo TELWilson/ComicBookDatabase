@@ -16,7 +16,15 @@ namespace Exercises
          */
         public List<double> ArrayInt2ListDouble(int[] intArray)
         {
-            return null;
+            List<double> doubleList = new List<double>(); // creating a new list to hold doubles for the return
+
+            foreach (int value in intArray)
+            {
+                double decNum = Convert.ToDouble(value);
+                doubleList.Add(decNum / 2);
+            }
+
+            return doubleList;
         }
 
     }
