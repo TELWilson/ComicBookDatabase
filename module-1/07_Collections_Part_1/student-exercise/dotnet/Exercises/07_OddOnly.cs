@@ -16,7 +16,24 @@ namespace Exercises
          */
         public List<int> OddOnly(int[] integerArray)
         {
-            return null;
+
+            //YOU NEED TO CONVERT THE ARRAY TO A LIST
+            //int oddInt = 0;
+            
+            List<int> oddList = new List<int>();  // create return list
+            //for (int i = 0; i < integerArray.Length - 1; i++)  // needs to be a foreach
+            foreach (int oddInt in integerArray)
+            {
+                if (oddInt % 2 != 0 )  // evaluating the value of at the index to see if it is divisible by 2
+                {
+                    oddList.Add(oddInt);
+                }
+            }
+
+            
+
+            return oddList;
+
         }
 
     }

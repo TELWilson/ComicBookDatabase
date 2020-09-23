@@ -22,8 +22,33 @@ namespace Exercises
          */
         public List<string> FizzBuzzList(int[] integerArray)
         {
+            List<string> fizzyList = new List<string>();
+            //integerArray.ToString();
 
-            return null;
+            foreach (int number in integerArray) 
+            {
+                if (number % 3 == 0 && number % 5 == 0) //is it divisible by 3 AND 5?
+                {
+                    fizzyList.Add("FizzBuzz");
+                }
+                else if (number % 3 == 0) // else if is like an "or", is it divisible by 3?
+                {
+                    fizzyList.Add("Fizz");
+                }
+                else if (number % 5 == 0) // or is it divisible by 5?
+                {
+                    fizzyList.Add("Buzz");
+                }
+
+                else
+                {
+                     
+                    fizzyList.Add(number.ToString()); // add other integers AND switching them to strings
+                }
+               
+
+            }
+            return fizzyList;
         }
 
     }
