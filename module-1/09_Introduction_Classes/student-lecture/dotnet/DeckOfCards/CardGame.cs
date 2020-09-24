@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DeckOfCards.PlayingCards;
+using System;
+using System.Collections.Generic;
 
 namespace DeckOfCards
 {
@@ -13,6 +15,8 @@ namespace DeckOfCards
         public void Play()
         {
             // 1. Create a list to store cards
+            List<Card> cards = new List<Card>();
+
             bool keepGoing = true;
             while (keepGoing)
             {
@@ -44,16 +48,28 @@ namespace DeckOfCards
                         bool isFaceUp = bool.Parse(Console.ReadLine());
 
                         // 2. Define a Card class in another file
+
+
                         // 8. Use a custom constructor
 
                         // 3. Instantiate a new Card instance
+                        Card playingCard = new Card();
+                        playingCard.Value = value;
+                        playingCard.Suit = suit;
+                        playingCard.IsFaceUp = isFaceUp;
 
                         // 4. Add the card object to the list of cards
+                        cards.Add(playingCard);
 
                         break;
 
                     case "2":
                         Console.WriteLine("Displaying all of the cards.");
+
+                        foreach(Card card in cards)
+                        {
+                            Console.WriteLine(card.DisplayText);
+                        }
 
                         // 5. Make a DisplayText property on Card
                         // 6. Get the value from card.DisplayText and display it

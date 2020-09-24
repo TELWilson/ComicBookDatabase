@@ -16,7 +16,13 @@ namespace Exercises
          */
         public List<string> DistinctValues(List<string> stringList)
         {
-            return null;
+            List<string> scrubbedList = new List<string>();
+            HashSet<string> scrubbedSet = new HashSet<string>();
+
+            scrubbedSet = stringList.ToHashSet();
+            
+            scrubbedList = scrubbedSet.ToList();
+            return scrubbedList;
         }
 
     }

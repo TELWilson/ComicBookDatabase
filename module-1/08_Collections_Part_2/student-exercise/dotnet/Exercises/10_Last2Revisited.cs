@@ -28,7 +28,32 @@ namespace Exercises
 
             // use last2 answer from Monday's homework
             // getting an array and need to build a new dictionary
-            return null;
+
+            Dictionary<string, int> lastCount = new Dictionary<string, int>();
+            foreach (string letterString in words)
+            {
+                int count = 0;
+                int lastTwo = letterString.Length - 2;
+
+                if (letterString.Length >= 3)
+                {
+                    for (int i = 0; i <= letterString.Length - 3; i++)
+                    {
+
+                        string endString = (letterString.Substring(lastTwo));
+                        string shortString = letterString.Substring(i, 2);
+                        if (endString == shortString)
+                        {
+                            count++;
+                        }
+                    }
+                    lastCount[letterString] = count;
+                }
+                
+            }
+            
+
+            return lastCount;
         }
     }
 }

@@ -21,8 +21,24 @@ namespace Exercises
          *
          */
         public Dictionary<string, int> WordCount(string[] words)
-        {
-            return null;
+        {// We are starting with a dictionary? ^^^
+            //int count = 0;
+            Dictionary<string, int> CountingWords = new Dictionary<string, int>();
+
+            foreach (string word in words)
+            {
+
+                if (CountingWords.ContainsKey(word))
+                {
+                    CountingWords[word] += 1;
+                }
+                else
+                {
+                    CountingWords[word] = 1;
+                }
+                
+            }
+            return CountingWords;
         }
     }
 }
