@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Exercises
@@ -38,7 +40,37 @@ namespace Exercises
          */
         public string AnimalGroupName(string animalName)
         {
-            return null;
+            Dictionary<string, string> animalGroup = new Dictionary<string, string>();
+            animalGroup.Add("rhino", "Crash");
+            animalGroup.Add("giraffe", "Tower");
+            animalGroup.Add("elephant", "Herd");
+            animalGroup.Add("lion", "Pride");
+            animalGroup.Add("crow", "Murder");
+            animalGroup.Add("pigeon", "Kit");
+            animalGroup.Add("flamingo", "Pat");
+            animalGroup.Add("deer", "Herd");
+            animalGroup.Add("dog", "Pack");
+            animalGroup.Add("crocodile", "Float");
+
+            if (animalName != null)
+            {
+                animalName = animalName.ToLower();
+
+
+
+                if (animalGroup.ContainsKey(animalName))
+                {
+
+                    return animalGroup[animalName];
+
+                }
+                else
+                {
+                    return "unknown";
+                }
+                
+            }
+            return "unknown";
         }
     }
 }

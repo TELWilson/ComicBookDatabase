@@ -25,6 +25,9 @@ namespace Exercises
          */
         public Dictionary<string, int> Last2Revisited(string[] words)
         {
+
+            // use last2 answer from Monday's homework
+            // getting an array and need to build a new dictionary
             return null;
         }
     }

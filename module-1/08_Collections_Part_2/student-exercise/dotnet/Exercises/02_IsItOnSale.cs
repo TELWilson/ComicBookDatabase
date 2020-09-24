@@ -35,15 +35,27 @@ namespace Exercises
         public double IsItOnSale(string itemNumber)
         {
             // First create a Dictionary that holds this data
-                //"KITCHEN4001"-> 0.20
-                //"GARAGE1070"-> 0.15
-                //"LIVINGROOM"-> 0.10
-                //"KITCHEN6073"-> 0.40
-                //"BEDROOM3434"-> 0.60
-                //"BATH0073"-> 0.15
+            Dictionary<string, double> discounts = new Dictionary<string, double>();
+            discounts.Add("kitchen4001", 0.20);
+            discounts.Add("garage1070", 0.15);
+            discounts.Add("livingroom", 0.10);
+            discounts.Add("kitchen6073", 0.40);
+            discounts.Add("bedroom3434", 0.60);
+            discounts.Add("bath0073", 0.15);
 
-            // Now check the Dictionary you just created for the itemNumber
+            if (itemNumber != null && itemNumber != "")
+                // Leslie, the best way to do this is
+                //if (!string.IsNullOrEmpty(variable))
+            {
 
+                itemNumber = itemNumber.ToLower();
+                // Now check the Dictionary you just created for the itemNumber
+                if (discounts.ContainsKey(itemNumber))
+                {
+                    return discounts[itemNumber];
+                }
+                return 0.00;
+            }
             return 0.00;
         }
     }

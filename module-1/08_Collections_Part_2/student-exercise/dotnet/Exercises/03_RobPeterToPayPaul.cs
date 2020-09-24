@@ -20,7 +20,23 @@ namespace Exercises
          */
         public Dictionary<string, int> RobPeterToPayPaul(Dictionary<string, int> peterPaul)
         {
-            return null;
+
+            //should not have to create a new dictionary
+            int petersCents = peterPaul["Peter"]; //assigning the int value for key "peter"
+            int paulsCents = peterPaul["Paul"]; // assigning the int value for key "paul"
+
+            if (petersCents > 0 && paulsCents < 1000)  // checking the parameters set in the problem, peter more than 0, paul less than 10
+            {
+                petersCents = petersCents / 2; //trying to remove half of peters money
+                paulsCents = petersCents + paulsCents; //trying to add half of peters cents to pauls cents
+                peterPaul["Peter"] = petersCents;
+                peterPaul["Paul"] = paulsCents;
+                return peterPaul; // hoping this returns the new values
+            }  
+            return peterPaul;
+
+
+            
         }
-    }
+    } //(peterPaul["Peter"] = petersCents) + (peterPaul["Paul"]= paulsCents)
 }
