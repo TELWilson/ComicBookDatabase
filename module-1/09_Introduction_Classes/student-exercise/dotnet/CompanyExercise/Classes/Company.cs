@@ -33,7 +33,7 @@ namespace TechElevator.Classes
         /// Returns "small" if less than 50 employees, "medium" if between 50 and 250 employees, "large" if greater than 250 employees.
         /// </summary>
         /// <returns></returns>
-        public string GetCompanysize()
+        public string GetCompanySize()
         {
             {
                 if (NumberOfEmployees < 50)
