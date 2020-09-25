@@ -10,6 +10,11 @@ namespace DeckOfCards.PlayingCards
     
     public class Card
     {
+
+        public Card() // Default constructor  there is always an invisible one when you create something new
+        {
+            Console.WriteLine("The card was created");
+        }
         /// <summary>
         /// Gets or sets the numerical value of the card
         /// </summary>
@@ -26,7 +31,7 @@ namespace DeckOfCards.PlayingCards
         /// <summary>
         /// Gets or sets whether or not the card is face up
         /// </summary>
-        public bool IsFaceUp { get; set; }
+        public bool IsFaceUp { get; private set; } = true;
 
         /// <summary>
         /// Gets a user-readable message for the card
@@ -35,9 +40,23 @@ namespace DeckOfCards.PlayingCards
         {
             get
             {
-                return this.Value + " of " + this.Suit;
+                if (this.IsFaceUp)
+                {
+                    return this.Value + " of " + this.Suit;
+                }
+                else
+                {
+                    return "The Card is Face Down";
+                }
             }
         }
 
+        /// <summary>
+        /// Flips whether or not the card is face up
+        /// </summary>
+        public void Flip()
+        {
+            this.IsFaceUp = !this.IsFaceUp;
+        }
     }
 }

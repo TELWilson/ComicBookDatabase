@@ -56,7 +56,7 @@ namespace DeckOfCards
                         Card playingCard = new Card();
                         playingCard.Value = value;
                         playingCard.Suit = suit;
-                        playingCard.IsFaceUp = isFaceUp;
+                        //playingCard.IsFaceUp = isFaceUp;
 
                         // 4. Add the card object to the list of cards
                         cards.Add(playingCard);
@@ -77,6 +77,12 @@ namespace DeckOfCards
 
                     case "3":
                         Console.WriteLine($"Flipping the cards.");
+
+                        foreach (Card card in cards)
+                        {
+                            card.Flip();
+                            //card.IsFaceUp = !card.IsFaceUp;
+                        }
                         // 7a. Set IsFaceUp Directly
                         // 7b. Make IsFaceUp have a private setter
                         // 7c. Add a Flip method on Card, then call it here
