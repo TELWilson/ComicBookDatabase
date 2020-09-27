@@ -4,6 +4,8 @@ using System.Text;
 
 namespace Individual.Exercises.Classes
 {
+    //private int totalFirstClassSeats;
+    //private int privateFirstClassSeats;
     public class Airplane
     {
         public Airplane(string planeNumber, int totalFirstClassSeats, int totalCoachSeats)
@@ -59,7 +61,7 @@ namespace Individual.Exercises.Classes
         {
             get
             {
-                return this.totalCoachSeats - this.availableCoachSeats;
+                return this.TotalCoachSeats - this.BookedCoachSeats;
             }
         }
 
@@ -70,7 +72,7 @@ namespace Individual.Exercises.Classes
             {
                 if (AvailableFirstClassSeats >= totalNumberOfSeats)
                 {
-                    totalNumberOfSeats = totalNumberOfSeats + BookedFirstClassSeats;
+                    BookedFirstClassSeats += totalNumberOfSeats;
                     return true;
                 }
                 return false;
@@ -79,7 +81,7 @@ namespace Individual.Exercises.Classes
             {
                 if (AvailableCoachSeats >= totalNumberOfSeats)
                 {
-                    totalNumberOfSeats = totalNumberOfSeats + BookedCoachSeats;
+                    BookedCoachSeats += totalNumberOfSeats;
                     return true;
                 }return false;
             }
