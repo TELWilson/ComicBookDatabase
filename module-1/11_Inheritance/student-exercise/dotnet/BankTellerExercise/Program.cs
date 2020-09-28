@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BankTellerExercise.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,14 @@ namespace BankTellerExercise
     {
         static void Main(string[] args)
         {
+            //BankAccount bankAccount = new BankAccount();
+
+
+            //CheckingAccount checkingAccount = new CheckingAccount();
+
+
+            //SavingsAccount savingsAccount = new SavingsAccount();
+
         }
     }
 }

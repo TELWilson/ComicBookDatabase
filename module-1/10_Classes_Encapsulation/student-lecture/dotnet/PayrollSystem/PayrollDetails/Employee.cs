@@ -61,12 +61,25 @@ namespace PayrollSystem.PayrollDetails
         public void Pay()
         {
             Console.WriteLine("It is payday for " + this.FullName);
-            this.totalIncome += this.Salary / 26.0M;
+            //this.totalIncome += this.Salary / 26.0M;
+            this.Pay(this.Salary / 26.0M);
         }
 
         public void Pay(decimal amount)
         {
+
+            decimal amountToDeduct = Employee.CalculateWithholdingAmount(amount);
+
+            this.totalIncome += amount - amountToDeduct;
+
             this.totalIncome += amount;
         }
+
+        private static decimal CalculateWithholdingAmount (decimal amount)
+        {
+            return amount * 0.05m;
+        }
+
+
     }
 }

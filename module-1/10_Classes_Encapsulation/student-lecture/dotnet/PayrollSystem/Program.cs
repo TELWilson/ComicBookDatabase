@@ -16,11 +16,18 @@ namespace PayrollSystem
 
             moss.LastName = "Awesome";
             hooli.Pay();
+            //PayEmployees(hooli);
 
             moss.Pay(1000M);
 
+            
             Console.WriteLine("That's all folks");
 
+        }
+
+        private static void PayEmployees(Company company)
+        {
+            company.Pay();
         }
     }
 }
