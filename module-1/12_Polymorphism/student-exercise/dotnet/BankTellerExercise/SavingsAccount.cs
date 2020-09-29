@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
 namespace BankTellerExercise
 {
     public class SavingsAccount : BankAccount
@@ -26,5 +30,11 @@ namespace BankTellerExercise
             }
             return Balance;
         }
+
+        //public override int TransferTo (BankAccount destinationAccount, int transferAmount)
+        //{
+        //     base.Deposit(Balance + transferAmount);
+        //    return Balance;
+        //}
     }
 }

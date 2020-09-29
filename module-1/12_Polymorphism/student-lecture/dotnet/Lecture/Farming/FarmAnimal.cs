@@ -6,7 +6,7 @@ namespace Lecture.Farming
     /// <summary>
     /// A base farm animal class.
     /// </summary>
-    public class FarmAnimal
+    public class FarmAnimal : Object, IMakesNoise
     {       
         public string Name { get; }
 
