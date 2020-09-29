@@ -14,12 +14,17 @@ namespace InheritanceLecture.Auctioneering
         /// <summary>
         /// Creates a new instance of an auction
         /// </summary>
-        public Auction()
+        public Auction(string itemName)
         {
             // Auctions are easier to work with if they have a default high bid
             this.CurrentHighBid = new Bid("Nobody", 0);
+            this.Item = itemName;
+
+            Console.WriteLine("Starting a new auction for " + itemName);
         }
 
+
+        public string Item { get; set; }
         /// <summary>
         /// Gets or sets the current auctioneer.
         /// This is a complex property.
@@ -40,6 +45,17 @@ namespace InheritanceLecture.Auctioneering
                 Console.WriteLine("Changing auctioneer to " + value);
             }
         }
+
+        //public string GetAuctioneer()
+        //{
+        //    return this.auctioneer;
+        //}
+        //public void SetAuctioneer(string value)
+        //{
+        //    this.auctioneer = value;
+        //    Console.WriteLine("changing auctioneer to " + value);
+        //}
+
 
         /// <summary>
         /// The location of the auction.
@@ -68,25 +84,45 @@ namespace InheritanceLecture.Auctioneering
         /// </summary>
         public bool HasEnded { get; private set; }
 
+        protected void EndAuction()
+        {
+            Console.WriteLine("The auction is over!");
+            this.HasEnded = true;
+        }
+
         /// <summary>
         /// Places a Bid on the Auction
         /// </summary>
         /// <param name="offeredBid">The bid to place.</param>
         /// <returns>True if the new bid is the current winning bid</returns>
-        public bool PlaceBid(Bid offeredBid)
+        public virtual bool PlaceBid(Bid offeredBid)
         {
+
+            if (this.HasEnded)
+            {
+                Console.WriteLine("The auction is currently closed: ");
+                    return false;
+            }
+
+
             // Print out the bid details.
             Console.WriteLine($"{offeredBid.Bidder} bid {offeredBid.BidAmount.ToString("C")}");
 
             // Record it as a bid by adding it to allBids
+            this.allBids.Add(offeredBid);
 
             // Check to see IF the offered bid is higher than the current bid amount
+            if (offeredBid.BidAmount > this.CurrentHighBid.BidAmount)
+            {
                 // if yes, set offered bid as the current high bid
+                this.CurrentHighBid = offeredBid;
+            }
 
             // Output the current high bid
-
+            Console.WriteLine("The current high bid is " + CurrentHighBid.BidAmount.ToString("C") + " by " + CurrentHighBid.Bidder);
+            
             // Return if this is the new highest bid
-            return false;            
+            return this.CurrentHighBid == offeredBid;            
         }                
     }
 }

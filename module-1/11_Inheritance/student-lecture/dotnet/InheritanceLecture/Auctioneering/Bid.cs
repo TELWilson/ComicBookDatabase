@@ -1,4 +1,6 @@
-﻿namespace InheritanceLecture.Auctioneering
+﻿using System;
+
+namespace InheritanceLecture.Auctioneering
 {
     /// <summary>
     /// This class represents a single bid in an auction.
@@ -27,6 +29,11 @@
         /// This is a readonly property
         /// </summary>
         public int BidAmount { get; }
+
+        public override string ToString()
+        {
+            return this.Bidder + " bid " + this.BidAmount;
+        }
 
     }
 }
