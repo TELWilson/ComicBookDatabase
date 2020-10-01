@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 
 namespace TestableClasses.Classes
@@ -13,7 +14,7 @@ namespace TestableClasses.Classes
 
         public int Add(int x, int y)
         {
-            return x + x;
+            return x + y;
         }
 
         public int Divide(int x, int y)
@@ -23,7 +24,11 @@ namespace TestableClasses.Classes
 
         public int GetLargestValue(int[] numbers)
         {
-            int max = 0;
+            if(numbers == null || numbers.Length <=0)
+            {
+                return 0;
+            }
+            int max = numbers [0];
 
             for (int i = 0; i < numbers.Length; i++)
             {
