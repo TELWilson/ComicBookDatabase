@@ -10,6 +10,16 @@ namespace Exercises.Tests
     [TestClass()]
     public class KataFizzBuzzTests
     {
+        [TestMethod]
+        public void DoesFizzBuzzReturnFizzForOne()
+        {
+            //Arrange
+            KataFizzBuzz inputString = new KataFizzBuzz();
+            //Act
+            string result = inputString.FizzBuzz(1, "1");
+            //Assert
+            Assert.AreEqual("1", result);
+        }
         
     }
 }

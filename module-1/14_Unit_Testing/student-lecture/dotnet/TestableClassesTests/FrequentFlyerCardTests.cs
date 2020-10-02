@@ -39,7 +39,7 @@ namespace TestableClassesTests
 
             //Assert
             Assert.AreEqual("HELLO", result[0]);
-            //Assert.AreEqual("WORLD", result[0]);
+            //InAssert.AreEqual("WORLD", result[0]);
         }
 
     }

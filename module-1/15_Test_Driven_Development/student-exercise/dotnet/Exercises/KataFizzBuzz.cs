@@ -8,6 +8,9 @@ namespace Exercises
 {
     public class KataFizzBuzz
     {
-
+        public string FizzBuzz(int input, string output)
+        {
+            return null;
+        }
     }
 }

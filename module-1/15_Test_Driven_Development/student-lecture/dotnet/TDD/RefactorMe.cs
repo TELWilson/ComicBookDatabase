@@ -6,26 +6,27 @@ namespace TDD
 {
     public class RefactorMe
     {
-        public string FrontTimes(string str, int n)
+        public string FrontTimes(string input, int timesToRepeat)
         {
-            string myEpicString = "";
+            string resultString = "";
+            // Maximum number of characters to repeat
+            const int MaxCharacters = 3;
 
-            if (str.Length <= 3)
+
+            for (int i = 0; i < timesToRepeat; i++)
             {
-                for (int i = 0; i < n; i++)
+                //We need to worry about IndexOutOfRange with strings < maxCharacters long
+                if (input.Length < MaxCharacters)
                 {
-                    myEpicString += str;
+                    resultString += input;
                 }
-                return myEpicString;
-            }
-            else
-            {
-                for (int i = 0; i < n; i++)
+                else
                 {
-                    myEpicString += str.Substring(0, 3);
+                    resultString += input.Substring(0, MaxCharacters);
                 }
-                return myEpicString;
+                
             }
+            return resultString;
         }
     }
 }
