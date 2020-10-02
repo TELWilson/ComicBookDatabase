@@ -11,14 +11,15 @@ namespace Exercises.Tests
     public class KataFizzBuzzTests
     {
         [TestMethod]
-        public void DoesFizzBuzzReturnFizzForOne()
+        [DataRow(1, "1")]
+        public void DoesFizzBuzzReturnFizzForOne(int input, string expected)
         {
             //Arrange
             KataFizzBuzz inputString = new KataFizzBuzz();
             //Act
-            string result = inputString.FizzBuzz(1, "1");
+            string result = inputString.FizzBuzz(input);
             //Assert
-            Assert.AreEqual("1", result);
+            Assert.AreEqual(expected, result);
         }
         
     }
