@@ -12,7 +12,8 @@ namespace Exercises.Tests
     {
         [TestMethod]
         [DataRow(1, "1")]
-        public void DoesFizzBuzzReturnFizzForOne(int input, string expected)
+        [DataRow(3, "Fizz")]
+        public void DoesFizzBuzzReturnCorrectString(int input, string expected)
         {
             //Arrange
             KataFizzBuzz inputString = new KataFizzBuzz();
