@@ -14,7 +14,10 @@ namespace Exercises
             {
                 return "Fizz";
             }
-            
+            else if (input % 5 == 0)
+            {
+                return "Buzz";
+            }
             return input.ToString();
             //if (input / 3 == 0 && input /5 ==0)
             //{
