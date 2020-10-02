@@ -10,8 +10,10 @@ namespace Exercises
     {
         public string FizzBuzz(int input)
         {
-
-          
+            if (input % 3 == 0)
+            {
+                return "Fizz";
+            }
             return input.ToString();
             //if (input / 3 == 0 && input /5 ==0)
             //{
