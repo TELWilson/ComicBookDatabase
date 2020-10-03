@@ -14,7 +14,7 @@ namespace Exercises
 
             if (input >= 1 && input <= 100)
             {
-                if (input % 3 == 0 && input % 5 == 0)
+                if (input % 3 == 0 && input % 5 == 0 || check.Contains("3") && check.Contains("5"))
                 {
                     return "FizzBuzz";
                 }
