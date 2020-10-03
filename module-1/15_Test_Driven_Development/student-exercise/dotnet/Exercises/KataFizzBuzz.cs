@@ -10,7 +10,7 @@ namespace Exercises
     {
         public string FizzBuzz(int input)
         {
-            //string three = input.ToString().Contains("3")
+            string check = input.ToString();
 
             if (input >= 1 && input <= 100)
             {
@@ -18,7 +18,7 @@ namespace Exercises
                 {
                     return "FizzBuzz";
                 }
-                if (input % 3 == 0 || input.ToString().Contains("3")) 
+                if (input % 3 == 0 || check.Contains("3")) 
                 {
                     return "Fizz";
                 }
