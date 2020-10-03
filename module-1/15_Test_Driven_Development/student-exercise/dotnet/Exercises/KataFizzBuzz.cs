@@ -18,14 +18,15 @@ namespace Exercises
                 {
                     return "FizzBuzz";
                 }
-                if (input % 3 == 0 || check.Contains("3")) 
-                {
-                    return "Fizz";
-                }
-                else if (input % 5 == 0)
+                if (input % 5 == 0 || check.Contains("5"))
                 {
                     return "Buzz";
                 }
+                else if (input % 3 == 0 || check.Contains("3")) 
+                {
+                    return "Fizz";
+                }
+                
                 return input.ToString();
             }
             return " ";
