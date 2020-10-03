@@ -16,6 +16,7 @@ namespace Exercises.Tests
         [DataRow(5, "Buzz")]
         [DataRow(15, "FizzBuzz")]
         [DataRow(22, "22")]
+        [DataRow(0, "")]
         public void DoesFizzBuzzReturnCorrectString(int input, string expected)
         {
             //Arrange
