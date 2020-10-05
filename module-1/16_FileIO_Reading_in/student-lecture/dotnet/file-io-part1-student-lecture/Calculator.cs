@@ -11,8 +11,11 @@ namespace FileInputLecture
     {
         public int Divide(int x, int y)
         {
-            // TODO: Throw an argument exception here instead of allowing 0 for y
-
+            // Throw an argument exception here instead of allowing 0 for y
+            if (y==0)
+            {
+                throw new ArgumentOutOfRangeException("y", "Dude, you can't divide by zero!");
+            }
             return x / y;
         }
     }
