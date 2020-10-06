@@ -17,7 +17,7 @@ namespace Exercises.Tests
         [DataRow(15, "FizzBuzz")]
         [DataRow(22, "22")]
         [DataRow(0, " ")]
-        [DataRow(13, "Fizz")]//need to get this test working
+        [DataRow(13, "Fizz")]
         [DataRow(35, "FizzBuzz")]
         [DataRow(51, "Buzz")]
         [DataRow(53, "FizzBuzz")]

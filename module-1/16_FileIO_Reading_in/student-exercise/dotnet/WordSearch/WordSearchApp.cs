@@ -46,7 +46,7 @@ namespace WordSearch
                     //5. If the line contains the search string, print it out along with its line number
                     if (line.Contains(searchPhrase))
                     {
-                        Console.WriteLine(lineCounter.ToString() + line);
+                        Console.WriteLine(lineCounter.ToString() + ") " + line);
 
                     }
                     lineCounter++;
