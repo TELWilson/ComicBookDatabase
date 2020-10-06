@@ -49,7 +49,7 @@ namespace FileInputLecture
             // Next we're going to demonstrate working with reading files
             CensoredFileReader censor = new CensoredFileReader("Cat", "Doggo");
 
-            string filePath = Path.Combine(myPath, "alice.txt");
+            string filePath = Path.Combine(myPath, "alicia.txt");
 
             // We'll want to practice working with reading files by uncommenting this line
             censor.CensorFile(filePath);
