@@ -26,9 +26,10 @@ namespace FileInputLecture
             {
                 Console.WriteLine($"Censoring the contents of {sourceFilePath}");
 
-                List<string> censoredStrings = BuildCensoredStrings(sourceFilePath);
+                //List<string> censoredStrings = BuildCensoredStrings(sourceFilePath);
 
-                WriteCensoredStrings(censoredStrings, destFilePath);
+                //WriteCensoredStrings(censoredStrings, destFilePath);
+                this.CensorAndWrite(sourceFilePath, destFilePath);
             }
             catch (FileNotFoundException ex)
             {
@@ -89,6 +90,40 @@ namespace FileInputLecture
             }
 
             return censoredStrings;
+        }
+
+
+        //Not useful for homework, but a more real-world example
+        private void CensorAndWrite(string filePath, string destPath)
+        {// open the desitnation file for writing
+            using (StreamWriter writer = new StreamWriter(destPath, false))
+            {
+                // Add a using statement that creates a StreamReader pointing at the correct file
+                using (StreamReader reader = new StreamReader(filePath))
+                {
+                    // While we haven't reached the end of the file...
+                    while (!reader.EndOfStream)
+                    {
+                        // Read in the next line from the file
+                        string line = reader.ReadLine();
+
+                        // If the line needs censoring,
+                        if (line.Contains(this.WordToCensor))
+                        {
+                            // Censor the line as needed by replacing WordToCensor with CensoredText
+                            line = line.Replace(this.WordToCensor, this.CensoredText);
+
+                            
+                        }
+                        
+                        
+                            writer.WriteLine(line);
+                        
+                    }
+                }
+            }
+
+            
         }
     }
 }
