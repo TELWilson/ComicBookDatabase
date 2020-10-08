@@ -32,24 +32,26 @@ namespace WordSearch
                 //4. Loop through each line in the file
                 while (!reader.EndOfStream)
                 {
-                    string line;
-                    if (caseSense == "n" || caseSense == "N" || caseSense == "no" || caseSense == "No")
+                    lineCounter++;
+                    string line = reader.ReadLine();
+                    if (caseSense.ToLower().Contains("n"))
                     {
-                        line = reader.ReadLine().ToLower();
-                        //searchPhrase.toLower();  //trying to figure out how to specify case sensitivity.
+                        if (line.ToLower().Contains(searchPhrase.ToLower()))
+                        {
+                            Console.WriteLine(lineCounter + ") " + line);
+                        }
+                       
                     }
                     else
                     {
-                        line = reader.ReadLine();
+                        if (line.Contains(searchPhrase))
+                        {
+                            Console.WriteLine(lineCounter + ") " + line);
+                        }
+                        
                     }
 
-                    //5. If the line contains the search string, print it out along with its line number
-                    if (line.Contains(searchPhrase))
-                    {
-                        Console.WriteLine(lineCounter.ToString() + ") " + line);
-
-                    }
-                    lineCounter++;
+                    
                 }
                 
             }

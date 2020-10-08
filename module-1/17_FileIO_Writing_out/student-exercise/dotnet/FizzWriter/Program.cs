@@ -5,7 +5,7 @@ using System.Text;
 
 namespace FizzWriter
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -22,15 +22,18 @@ namespace FizzWriter
                     {
                         writer.WriteLine("FizzBuzz");
                     }
-                    if (input % 5 == 0)
+                    else if (input % 5 == 0)
                     {
                         writer.WriteLine("Buzz");
                     }
-                    if (input % 3 == 0)
+                    else if (input % 3 == 0)
                     {
                         writer.WriteLine("Fizz");
                     }
-                    writer.WriteLine(input);
+                    else
+                    {
+                        writer.WriteLine(input);
+                    }
                 }
 
             }
