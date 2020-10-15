@@ -131,7 +131,6 @@ GROUP BY c.customer_id, c.first_name, c.last_name
 ORDER BY spent DESC
 
 
-
 -- 15. The store ID, street address, total number of rentals, total amount of sales (i.e. payments), and average sale of each store.
 -- (NOTE: Keep in mind that an employee may work at multiple stores.)
 -- (Store 1 has 7928 total rentals and Store 2 has 8121 total rentals)

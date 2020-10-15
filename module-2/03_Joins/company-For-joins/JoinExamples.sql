@@ -1,13 +1,26 @@
 -- firstname, lastname and title of all employees with a position
+SELECT *
+FROM Employee
+JOIN Position ON Employee.position = Position.id
 
 
 -- title and department name of all positions assigned to an department
+SELECT *
+FROM Position
+JOIN Department ON Position.department = Department.id
 
 
 -- firstname, lastname, title, and department name of all assigned employees
 
 
 -- firstname and lastname of all employees (assigned or not), include title for those that are assigned
+SELECT *
+FROM Employee
+LEFT OUTER JOIN Position ON Employee.position = Position.id
+
+SELECT *
+FROM Position
+RIGHT OUTER JOIN Employee ON Employee.position = Position.id
 
 
 -- all position titles (assigned or not) and all employees assigned to a position (firstname and lastname)

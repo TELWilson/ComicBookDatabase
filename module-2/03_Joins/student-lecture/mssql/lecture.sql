@@ -1,14 +1,36 @@
 -- ********* INNER JOIN ***********
 
 -- Let's find out who made payment 16666:
+SELECT *
+FROM payment
+WHERE payment_id = 16666;
 
 -- Ok, that gives us a customer_id, but not the name. We can use the customer_id to get the name FROM the customer table
+SELECT *
+FROM payment
+INNER JOIN customer ON payment.customer_id = customer.customer_id
+WHERE payment_id = 16666;
 
 -- We can see that the * pulls back everything from both tables. We just want everything from payment and then the first and last name of the customer:
+SELECT amount, first_name, last_name
+FROM payment
+INNER JOIN customer ON payment.customer_id = customer.customer_id
+WHERE payment_id = 16666;
 
 -- But when did they return the rental? Where would that data come from? From the rental table, so let’s join that.
+SELECT p.amount, c.first_name, c.last_name, r.return_date, *
+FROM payment AS p
+JOIN customer AS c ON p.customer_id = c.customer_id
+JOIN rental r ON p.rental_id = r.rental_id
+WHERE payment_id = 16666;
 
 -- What did they rent? Film id can be gotten through inventory.
+SELECT p.amount, c.first_name, c.last_name, r.return_date, i.film_id, *
+FROM payment AS p
+JOIN customer AS c ON p.customer_id = c.customer_id
+JOIN rental r ON p.rental_id = r.rental_id
+JOIN inventory i on r.inventory_id = i.inventory_id
+WHERE payment_id = 16666;
 
 -- What if we wanted to know who acted in that film?
 
