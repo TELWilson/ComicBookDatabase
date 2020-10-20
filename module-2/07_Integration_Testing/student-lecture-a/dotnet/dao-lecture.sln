@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2016
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldGeography", "WorldGeography\WorldGeography.csproj", "{95EFD4F4-3604-4596-B345-AA2271A26378}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorldGeography", "WorldGeography\WorldGeography.csproj", "{95EFD4F4-3604-4596-B345-AA2271A26378}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "World GeographyTest", "World GeographyTest\World GeographyTest.csproj", "{C29DFB41-1BAE-4A08-9215-25A350E77942}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{95EFD4F4-3604-4596-B345-AA2271A26378}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95EFD4F4-3604-4596-B345-AA2271A26378}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95EFD4F4-3604-4596-B345-AA2271A26378}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C29DFB41-1BAE-4A08-9215-25A350E77942}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C29DFB41-1BAE-4A08-9215-25A350E77942}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C29DFB41-1BAE-4A08-9215-25A350E77942}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C29DFB41-1BAE-4A08-9215-25A350E77942}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
