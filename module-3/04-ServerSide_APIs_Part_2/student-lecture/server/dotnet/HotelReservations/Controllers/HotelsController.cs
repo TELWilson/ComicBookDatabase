@@ -102,10 +102,50 @@ namespace HotelReservations.Controllers
         }
 
         // Handle creating a reservation on /reservations POST
+        [HttpPost("reservations")]
+        public ActionResult<Reservation> AddReservation(Reservation newReservation)
+        {
+            Reservation result = this.reservationDao.Create(newReservation);
+
+            return Created("reservations/" + result.Id, result);
+        }
 
         // Handle updating a reservation on /reservations/{id} PUT
+        [HttpPut("reservations/{id}")]
+        public ActionResult<Reservation> UpdateReservation(int id, Reservation reservation)
+        {
+
+            //TODO: Validate reservation Id matches
+            if (reservation.Id != id)
+            {
+                return BadRequest("The ID of the reservation must match the URL");
+            }
+
+            //TODO: Check that reservation exists
+            Reservation existing = this.reservationDao.Get(id);
+            if(existing == null)
+            {
+                return NotFound("Could not find the specified reservation");
+            }
+
+            return this.reservationDao.Update(id, reservation);
+        }
 
         // Handle deleting a reservation on /reservations/{id} DELETE
+        [HttpDelete("reservations/{id}")]
+        public ActionResult DeleteReservation(int id)
+        {
+            //TODO: Check that reservation exists
+            Reservation existing = this.reservationDao.Get(id);
+            if (existing == null)
+            {
+                return NotFound("Could not find the specified reservation");
+            }
+
+            this.reservationDao.Delete(id);
+
+            return NoContent();
+        }
 
     }
 }
