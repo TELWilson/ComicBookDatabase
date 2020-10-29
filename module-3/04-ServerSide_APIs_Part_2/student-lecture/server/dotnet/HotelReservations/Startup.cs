@@ -23,6 +23,7 @@ namespace HotelReservations
             services.AddControllers();
 
             // Dependency Injection configuration
+            
             services.AddScoped<IHotelDao>(m => new HotelDao());
             services.AddScoped<IReservationDao>(m => new ReservationDao());
         }
