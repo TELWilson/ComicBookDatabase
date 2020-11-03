@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SallyServer.DAO;
 using SallyServer.Models;
@@ -8,6 +10,7 @@ namespace SallyServer.Controllers
 {
     [Route("[controller]")]
     [ApiController]
+    [Authorize]
     public class QuestionsController : ControllerBase
     {
         private readonly IQuestionsDao questionsDao;
@@ -18,12 +21,14 @@ namespace SallyServer.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public ActionResult<List<Question>> GetAllQuestions()
         {
             return Ok(this.questionsDao.GetQuestions());
         }
 
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public ActionResult<Question> GetQuestion(int id)
         {
             Question question = this.questionsDao.GetQuestion(id);
@@ -37,7 +42,7 @@ namespace SallyServer.Controllers
         }
 
         [HttpPut("{id}")]
-        public ActionResult<List<Question>> UpdateQuestion(int id, Question newQuestion)
+        public ActionResult<List<Question>> UpdateQuestion(int id, Question updatedQuestion)
         {
             Question question = this.questionsDao.GetQuestion(id);
 
@@ -46,7 +51,7 @@ namespace SallyServer.Controllers
                 return NotFound();
             }
 
-            return Ok(this.questionsDao.UpdateQuestion(newQuestion));
+            return Ok(this.questionsDao.UpdateQuestion(updatedQuestion));
         }
 
         [HttpDelete("{id}")]
@@ -65,6 +70,7 @@ namespace SallyServer.Controllers
         }
 
         [HttpGet("random")]
+        [AllowAnonymous]
         public ActionResult<Question> GetRandomQuestion()
         {
             Question question = this.questionsDao.GetRandomQuestion();
@@ -82,6 +88,24 @@ namespace SallyServer.Controllers
             Question newQuestion = this.questionsDao.AddQuestion(question);
 
             return Created($"/questions/{newQuestion.Id}", newQuestion);
+        }
+
+        [HttpPost("search")]
+        [AllowAnonymous]
+        public ActionResult Search(QuestionSearch search)
+        {
+            return StatusCode((int)HttpStatusCode.NotImplemented);
+        }
+
+        public class QuestionSearch
+        {
+            public string TitleLike { get; set; }
+
+            public DateTime CreatedAfter { get; set; }
+
+            public DateTime CreatedBefore { get; set; }
+
+            public int CreatedByUserID { get; set; }
         }
     }
 }

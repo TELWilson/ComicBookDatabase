@@ -49,10 +49,9 @@ namespace SallyServer.DAO
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
-                if (reader.HasRows)
+                if (reader.Read())
                 {
-                    reader.Read(); // Move to first row
-
+                    
                     return GetQuestionFromReader(reader);
                 }
             }
@@ -72,7 +71,7 @@ namespace SallyServer.DAO
                 cmd.Parameters.AddWithValue("@answer", question.Answer);
                 cmd.ExecuteNonQuery();
 
-                cmd = new SqlCommand("SELECT @@IDENTITY", conn);
+                cmd = new SqlCommand("SELECT @@IDENTITY", conn); //or SELECT SCOPE_IDENTITY()
                 question.Id = Convert.ToInt32(cmd.ExecuteScalar());
             }
 
