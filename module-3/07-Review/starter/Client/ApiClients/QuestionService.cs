@@ -20,7 +20,14 @@ namespace SallyClient.ApiClients
 
         public void UpdateToken(string token)
         {
-            this.client.Authenticator = new JwtAuthenticator(token);
+            if (string.IsNullOrEmpty(token))
+            {
+                this.client.Authenticator = null;
+            }
+            else
+            {
+                this.client.Authenticator = new JwtAuthenticator(token);
+            }
         }
 
         public List<API_Question> GetAllQuestions()
