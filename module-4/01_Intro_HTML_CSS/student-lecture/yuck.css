@@ -1,0 +1,51 @@
+
+html {
+    background-color: black;
+    color: white;
+}
+
+p {
+    color: #12eb48;
+}
+
+input{
+    margin-bottom: 20px;
+}
+
+table{
+    background-color: gray;
+    padding: 10px;
+}
+
+.free {
+color: greenyellow;
+font-size: 18pt;
+}
+
+#btnSubmit {
+    padding: 20px;
+    background-color: darkslateblue;
+    color: yellow;
+}
+
+thead th{
+    border-bottom: 5px solid greenyellow            
+}
+
+td{
+    padding: 5px;
+    font-style: italic;
+    text-align: left;
+    font-weight: bold;
+    border-right: 10px solid royalblue;
+    /*
+    border-right-color: royalblue;
+    border-right-width: 10px;
+    border-right-style: solid;
+    */
+}
+
+th{
+    color: #12eb48;
+    font-size: 24pt;
+}

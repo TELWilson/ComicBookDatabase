@@ -1,0 +1,45 @@
+html{
+    background-color: midnightblue;
+    color: silver;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+table{
+    background-color:  rgb(117, 113, 136);;
+    padding: 10px;
+}
+
+thead th{
+    border-bottom: 3px solid oldlace ;
+}
+
+td{
+    padding: 5px;
+    text-align: left;
+    font-size: 12pt;
+}
+
+th{
+    color: rgb(18, 11, 56);
+    font-size: 16pt;
+}
+
+form{
+    background-color: gray;
+}
+
+a{
+    color: rgb(171, 195, 228);
+}
+
+blockquote{
+    font-style: italic;
+}
+
+h2{
+    font-family: cursive;
+}
+
+input{
+    margin-bottom: 15px;
+}

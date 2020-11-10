@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Now</title>
+   <link href="yuck.css" rel="stylesheet" />
+</head>
+
+<body>
+    <h1>Order Food</h1>
+    <p>Tell us what you want and we might send it to you.</p>Please don't eat here <q></q>
+
+    <blockquote>Your food, rightaway or no way (no way is an option) - Matt</blockquote>
+
+    <h2>Menu Options</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Entree</td>
+                <td>Burnt Pizza</td>
+                <td class="free">FREE!</td>
+            </tr>
+            <tr>
+                <td>Appetizer</td>
+                <td>Glass Shards</td>
+                <td>$4.83</td>
+            </tr>
+            <tr>
+                <td>Entree</td>
+                <td>Depleted Uranium Cannisters</td>
+                <td>$15,000 or Highest Bidder</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Order Form</h2>
+    <form action="http://Google.com" method="GET">
+        <div>
+            <label for="nameOfFood">Name of Food:</label>
+            <input type="text" id="nameOfFood" name="nameOfFood" placeholder="Enter a name of food">
+        </div>
+
+        <div>
+            <label for="quantity">Amount of Food:</label>
+            <input type="number" id="quantity" name="quantity" min="1" value="5">
+        </div>
+
+        <input type="submit" value="Order Now" id="btnSubmit">
+    </form>
+</body>
+
+</html>
