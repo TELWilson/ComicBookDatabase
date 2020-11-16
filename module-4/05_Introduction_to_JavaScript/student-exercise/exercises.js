@@ -5,13 +5,16 @@
 		sumDouble(1, 2) → 3
 		sumDouble(3, 2) → 5
 		sumDouble(2, 2) → 8
-
+*/
 		function sumDouble(x, y) {
 			// do logic here
+			if(x == y){
+				return (x + y) * 2;
+			}
 			// return result;
 			return x + y;
         }
-*/
+
 
 /*
 2. **hasTeen** We'll say that a number is "teen" if it is in the range 13..19 inclusive. 
@@ -22,6 +25,13 @@
 		hasTeen(20, 10, 13) → true
 */
 
+		function hasTeen (x, y, z){
+			if (x >= 13 && x <= 19 || y >= 13 && y <= 19 || z >= 13 && z <= 19){
+				return true;
+			}
+			return false;
+		}
+
 /* 
 3. **lastDigit** Given two non-negative int values, return true if they have the same 
     last digit, such as with 27 and 57.
@@ -30,6 +40,19 @@
 		lastDigit(6, 17) → false
 		lastDigit(3, 113) → true
 */
+		function lastDigit (x, y){
+		//const numx % 
+		//const numxDivTen = num/10;
+		//const resultx = Math.floor(numDivTen);
+		//const multipliedx = result * 10;
+		//const backDigitx = num-multiplied;
+		if(x % 10 == y % 10){
+			return true;
+		}
+		return false;
+	}
+
+		
 
 /*
 4. **seeColor** Given a string, if the string begins with "red" or "blue" return that color 
@@ -39,6 +62,17 @@
 		seeColor("xxred") → ""
         seeColor("blueTimes") → "blue"
 */
+		function seeColor (str){
+		if(str.startsWith('red')){
+			return 'red';
+		}
+		if(str.startsWith('blue')){
+			return 'blue';
+		}
+		return '';
+	}
+
+		
 
 /*
 5. **oddOnly** Write a function that given an array of integer of any length, filters out 
@@ -48,6 +82,17 @@
 		oddOnly([2, 4, 8, 32, 256]); → []
 */
 
+function oddOnly (fullArray){
+	const oddArray = [];
+for(let i = 0; i < fullArray.length; i ++){
+	if(fullArray[i] % 2 !== 0){
+		oddArray.push(fullArray[i]);
+	}
+	
+}
+return oddArray;
+}
+
 /*
 6. **frontAgain** Given a string, return true if the first 2 chars in the string also appear 
     at the end of the string, such as with "edited".
@@ -56,6 +101,19 @@
 		frontAgain("edit") → false
 		frontAgain("ed") → true
 */
+
+function frontAgain (firstAndLast){
+	if (firstAndLast.length < 2){
+		return false;
+	}
+	else if (firstAndLast.length == 2){
+		return true;
+	}
+	else if (firstAndLast.substring(0,1)=== firstAndLast.substring(firstAndLast.length-2, firstAndLast.length-1)){
+		return true;
+	}
+	return false;
+}
 
 /*
 7. **cigarParty** When squirrels get together for a party, they like to have cigars. 
@@ -69,6 +127,16 @@ or false otherwise.
 		cigarParty(70, true) → true
 */
 
+function cigarParty (numCigars, isWeekend){
+	if(isWeekend == true && numCigars >= 40){
+		return true;
+	}
+	if(isWeekend == false && numCigars >= 40 && numCigars <= 60){
+		return true;
+	}
+	return false;
+}
+
 /*
 8. **fizzBuzz** Because you know you can't live without it, FizzBuzz.
 
@@ -79,6 +147,19 @@ or false otherwise.
 		fizzBuzz(8) → 8
 */
 
+function fizzBuzz (num){
+	if (num % 3 == 0 && num % 5 == 0){
+		return 'FizzBuzz';
+	}
+	if (num % 5 == 0){
+		return 'Buzz';
+	}
+	if (num % 3 == 0){
+		return 'Fizz';
+	}
+	return num;
+}
+
 /*
 9. **filterEvens** Write a function that filters an array to only include even numbers.
 
@@ -88,6 +169,17 @@ or false otherwise.
 	filterEvens([100, 8, 21, 24, 62, 9, 7]) → [100, 8, 24, 62]
 */
 
+function filterEvens (fullArray){
+	const evenArray = [];
+	for(let i = 0; i < fullArray.length; i++){
+		if(fullArray[i] % 2 == 0){
+			evenArray.push(fullArray[i]);
+		}
+		
+}
+return evenArray;
+}
+
 /*
 10. **filterBigNumbers** Write a function that filters numbers greater than or equal to 100.
 
@@ -95,6 +187,17 @@ or false otherwise.
 	filterBigNumbers([3, 2, 7, 1, -100, -120]) → []
 	filterBigNumbers([]) → []
 */
+
+function filterBigNumbers (fullArray){
+	const bigArray = [];
+	for (let i = 0; i < fullArray.length; i++){
+		if(fullArray[i] >= 100){
+			bigArray.push(fullArray[i]);
+		}
+		
+	}
+	return bigArray;
+}
 
 /*
 11. **filterMultiplesOfX** Write a function to filter numbers that are a multiple of a 
@@ -104,15 +207,28 @@ parameter, `x` passed in.
 	filterMultiplesOfX([3, 5, 10, 20, 18, 21, 42, 67], 5) → [5, 10, 20]
 */
 
+function filterMultiplesOfX (fullArray, someNum){
+	const filteredArray = [];
+	for (let i = 0; i < fullArray.length; i++){
+		if (fullArray[i] % someNum == 0){
+			filteredArray.push(fullArray[i]);
+		}
+		
+	}
+	return filteredArray;
+}
+
 /*
 12. **createObject** Write a function that creates an object with a property called 
 firstName, lastName, and age. Populate the properties with your values.
-
-	createObject() →
-
-	{
-		firstName,
-		lastName,
-		age
-	}
 */
+	function createObject(firstName, lastName, age){
+		const mosquitoMascot = {
+		firstName: 'Dread',
+		lastName: 'Skeeter',
+		age: 40,
+		};
+		return mosquitoMascot;
+	}
+
+	

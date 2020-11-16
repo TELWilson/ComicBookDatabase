@@ -8,14 +8,15 @@
 
 // Single line comment
 
-console.debug("Debug message from our JavaScript file!");
+console.debug("Debug message from our JavaScript file!"); //least severe
 console.log("Log message from our JavaScript file!");
+//console.batman('Hello Bruce');
 console.info("Info message from our JavaScript file!");
 console.warn("Warning message from our JavaScript file!");
-console.error("Error message from our JavaScript file!");
-
-
-
+console.error("Error message from our JavaScript file!"); //most severe
+// note that these are lowercase
+//camelCase for methods
+//single quotes are also okay
 
 
 
@@ -37,10 +38,32 @@ console.error("Error message from our JavaScript file!");
  * They don't have a return type and the naming convention is camel-case.
  */
 function variables() {
-  // TODO: Declares a variable where the value cannot be changed
-  // TODO: Declares a variable those value can be changed
-  // TODO: Declares a variable that will always be an array
-  // TODO: Demonstrate console logging
+  // Declares a variable where the value cannot be changed
+const dayOfWeek = 'Friday';
+  
+  // Declares a variable those value can be changed
+let currentMinute = 55;
+currentMinute ++;
+
+var currentHour = 10;
+
+console.info('The current day is ', dayOfWeek);
+console.info('The current hour is ' + currentHour);
+console.info('The current minute is', currentMinute);
+
+
+  // Declares a variable that will always be an array
+  const myArray = [1,2,3];
+
+  myArray.push(42);
+
+  console.debug('My array!', myArray);
+
+  if (1){
+    console.log('This is true');
+  }
+
+  
 }
 
 /**
@@ -78,7 +101,7 @@ function printParameters(param1, param2) {
  * @param {Object} y
  */
 function equality(x, y) {
-  // TODO: Discuss this
+  
   console.log(`x is ${typeof x}`);
   console.log(`y is ${typeof y}`);
 
@@ -202,7 +225,30 @@ function stringFunctions(value) {
     */
 }
 
+function displayForceUsers() {
+  let users = ['Luke Skywalker', 'John Fulton', 'Darth Sidius', 'The Child'];
 
+  users.push('DarthBinks');
+
+  console.log(users.pop());
+
+  users.shift();
+  users.unshift('Leia');
+
+  const copyOfUsers = users.slice();
+
+  users.splice(2, 0, 'Ray');
+
+  const droids = ['C3PO', 'R2D2'];
+  users = (users.concat(droids));
+
+console.debug(users);
+console.debug(copyOfUsers);
+
+  for (let i = 0; i < users.length; i++){
+    console.debug('Force user at index ' + i + ' is ' + users[i]);
+  }
+}
 
 
 
