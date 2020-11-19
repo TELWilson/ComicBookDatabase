@@ -73,27 +73,56 @@ function clear() {
 }
 
 // add event listener for when the DOM is loaded
-document.addEventListener('ThisIsNotTheRightEventPleaseChangeIt', () => {
+document.addEventListener('DOMContentLoaded', () => {
 
   // set the variable called display (defined on line 1 above) equal to the display element
   // HINT: use its id 'display' to get a reference to it
+  display = document.querySelector('#display');
 
   // get a reference to all of the numbers
+  let nums = document.querySelectorAll('.number');
   // loop over each of the numbers
   // add a click event listener to each number to call the function clickNumber and pass in the click event
+  nums.forEach(number => {
+    number.addEventListener('click', e => {
+      number.value = e.target.value;
+      console.log('Number clicked', e);
+      clickNumber(e);
+    })
+  });
+  
 
   // get a reference to the decimal point button
+  const dec = document.querySelector('.decimal');
   // add a click event listener to call the function clickNumber and pass in the click event
+  dec.addEventListener('click', e => {
+    clickNumber(e);
+  })
 
   // get a reference to the all clear button
-  // add a click event listener to call the function clear  
+  const ac = document.querySelector('.all-clear');
+  // add a click event listener to call the function clear 
+  ac.addEventListener('click', e => {
+    clear();
+  }) 
 
   // get a reference to all of the operators;
+  const op = document.querySelectorAll('.operator');
   // loop over each of the operators
   // add a click event listener to each operator to call the function clickOperator and pass in the click event
+  op.forEach(operator => {
+    operator.addEventListener('click', e => {
+      operator.value = e.target.value;
+      clickOperator(e);
+    })
+  })
 
   // add click event listener for the equal sign
+  const eq = document.querySelector('.equal-sign');
   // should call the function performOperation
+  eq.addEventListener('click', e => {
+    performOperation(e);
+  })
 
 });
 
