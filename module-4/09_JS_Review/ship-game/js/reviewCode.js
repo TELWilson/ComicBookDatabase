@@ -2,8 +2,8 @@
 
 let clickCounter = 0;
 
-function incrementCounter(clickCounter){
-  clickCounter++;
+function incrementCounter(numClicks){
+  clickCounter = numClicks + 1;
 }
 
 // SPREAD OPERATOR (...) FOR FUNCTIONS
@@ -32,3 +32,20 @@ friendsCar.vin = 67890;
 
 console.log('I drive this car', myCar);
 console.log('My friend drives this car', friendsCar);
+
+
+
+
+const myPlane = {
+
+fuelAmount: 0,
+
+addFuel: function(amount) {
+  this.fuelAmount += amount;
+},
+
+  fly: function(distance){
+
+  },
+}
+
