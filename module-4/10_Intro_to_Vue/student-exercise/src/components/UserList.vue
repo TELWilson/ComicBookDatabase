@@ -1,29 +1,36 @@
 <template>
   <table id="tblUsers">
     <thead>
-    <tr>
+      <tr>
         <th>First Name</th>
         <th>Last Name</th>
         <th>Username</th>
         <th>Email Address</th>
         <th>Status</th>
-    </tr>
+      </tr>
     </thead>
     <tbody>
       <tr>
-        <td><input type="text" id="firstNameFilter"/></td>
-        <td><input type="text" id="lastNameFilter"/></td>
-        <td><input type="text" id="usernameFilter"/></td>
-        <td><input type="text" id="emailFilter"/></td>
+        <td><input type="text" id="firstNameFilter" v-model="filt.firstName"/></td>
+        <td><input type="text" id="lastNameFilter" v-model="filt.lastName"/></td>
+        <td><input type="text" id="usernameFilter" v-model="filt.username"/></td>
+        <td><input type="text" id="emailFilter" v-model="filt.emailAddress"/></td>
         <td>
-          <select id="statusFilter">
+          <select id="statusFilter" v-model="filt.status">
             <option value="">Show All</option>
             <option value="Active">Active</option>
             <option value="Disabled">Disabled</option>
           </select>
         </td>
       </tr>
-      <!-- user listing goes here -->
+      <tr v-for="user of filterUsers" v-bind:key="user.username"
+      v-bind:class="{disabled: user.status === 'Disabled'}">
+        <td>{{user.firstName}}</td>
+        <td>{{user.lastName}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.emailAddress}}</td>
+        <td>{{user.status}}</td>
+      </tr>
     </tbody>
   </table>
 </template>
@@ -31,8 +38,42 @@
 <script>
 export default {
   name: 'user-list',
+  computed: {
+    filterUsers(){
+      let user = this.users;
+
+      if(this.filt.firstName){
+        user = user.filter(n => n.firstName.toLowerCase().includes(this.filt.firstName));
+      }
+
+      if(this.filt.lastName){
+        user = user.filter(n => n.lastName.toLowerCase().includes(this.filt.lastName));
+      }
+
+      if(this.filt.username){
+        user = user.filter(n => n.username.toLowerCase().includes(this.filt.username));
+      }
+
+      if(this.filt.emailAddress){
+        user = user.filter(n => n.emailAddress.toLowerCase().includes(this.filt.emailAddress));
+      }
+
+      if(this.filt.status){
+        user = user.filter(n => n.status.toLowerCase().includes(this.filt.status));
+      }
+      
+      return user;
+    },
+  },
   data() {
     return {
+      filt: {
+        firstName: '',
+        lastName: '',
+        username: '',
+        emailAddress: '',
+        status: '',
+      },
       users: [
         { firstName: 'John', lastName: 'Smith', username: 'jsmith', emailAddress: 'jsmith@gmail.com', status: 'Active' },
         { firstName: 'Anna', lastName: 'Bell', username: 'abell', emailAddress: 'abell@yahoo.com', status: 'Active' },
@@ -49,10 +90,11 @@ export default {
 <style scoped>
 table {
   margin-top: 20px;
-  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 th {
-  text-transform: uppercase
+  text-transform: uppercase;
 }
 td {
   padding: 10px;
@@ -60,7 +102,8 @@ td {
 tr.disabled {
   color: red;
 }
-input, select {
+input,
+select {
   font-size: 16px;
 }
 </style>
