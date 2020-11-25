@@ -2,7 +2,9 @@
   <div class="book-container">
     <book-card 
     v-for="b in displayBook" 
-    v-bind:key="b.isbn" />
+    v-bind:key="b.isbn" 
+    v-bind:book="b" />
+
 
   </div>
 </template>
@@ -14,6 +16,7 @@ export default {
     name: 'reading-list',
     components: {
       BookCard,
+      
     },
     computed: {
       displayBook() {

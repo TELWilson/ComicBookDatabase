@@ -31,7 +31,19 @@ export default new Vuex.Store({
       isbn: "9783125971400"
     }
   ]},
-  mutations: {},
+  mutations: {
+    MARK_AS_READ(state, book){
+
+      let b = state.books.find(b => b.isbn === book.isbn);
+      if(!b.read){
+        b.read = true;
+      } else{
+      b.read = false;}
+    }, 
+    ADD_BOOK(state, book){
+      state.books.unshift(book);
+    }
+  },
   actions: {},
   modules: {},
   strict: true
