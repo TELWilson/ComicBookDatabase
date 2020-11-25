@@ -15,7 +15,8 @@
       <tbody>
         <tr>
           <td>
-            <input type="checkbox" id="selectAll" />
+            <input type="checkbox" id="selectAll" v-on:change="selectAllChanged($event)"
+            v-bind:checked="areAllSelected" />
           </td>
           <td>
             <input type="text" id="firstNameFilter" v-model="filter.firstName" />
@@ -60,9 +61,9 @@
     </table>
 
     <div class="all-actions">
-      <button v-on:click="selectedUserIDs()" v-bind:disabled="actionButtonDisabled" v-bind:id="enableSelectedUsers">Enable Users</button>
-      <button v-on:click="selectedUserIDs()" v-bind:disabled="actionButtonDisabled">Disable Users</button>
-      <button v-on:click="selectedUserIDs()" v-bind:disabled="actionButtonDisabled">Delete Users</button>
+      <button v-on:click="enableSelectedUsers()" v-bind:disabled="actionButtonDisabled" >Enable Users</button>
+      <button v-on:click="disableSelectedUsers()" v-bind:disabled="actionButtonDisabled">Disable Users</button>
+      <button v-on:click="deleteSelectedUsers()" v-bind:disabled="actionButtonDisabled">Delete Users</button>
     </div>
 
     <button v-on:click="showForm = !showForm" v-if="!showForm">Add New User</button>
@@ -101,6 +102,7 @@ export default {
         emailAddress: "",
         status: ""
       },
+      newSelectedUsers: [],
       showForm: false,
       selectedUserIDs: [],
       nextId: 7,
@@ -165,6 +167,13 @@ export default {
     };
   },
   methods: {
+    selectAllChanged(e) {
+      if (e.target.checked) {
+        this.selectedUserIDs = this.users.map;
+      }else{
+        this.selectedUserIDs = [];
+      }
+    },
     saveUser(){
       console.log('saving new user')
 
@@ -195,17 +204,44 @@ export default {
         
     },
     enableSelectedUsers(){
-      this.user.status = 'Active';
+      //console.debug('got to enable selected users', this.selectedUserIDs)
+     this.selectedUserIDs.forEach((item) => {
+       //console.debug(item)
+       //console.debug(this.users)
+       let user = this.users.find((u) => {return item == u.id});
+      
+       //console.debug(user)
+       user.status = 'Active';
+     });
+     this.selectedUserIDs = [];
+    },
+      
+    disableSelectedUsers(){
+      this.selectedUserIDs.forEach((item) => {
+        let user = this.users.find((u) => {return item == u.id});
+        user.status = 'Disabled';
+      });
       this.selectedUserIDs = [];
     },
-    disableSelectedUsers(){
-
-    },
     deleteSelectedUsers(){
-
+      //console.debug('check for user', this.selectedUserIDs)
+      this.selectedUserIDs.forEach((item) => {
+        //console.debug(item)
+        //console.debug(this.users)
+        let user = this.users.findIndex((u) => {return item == u.id});
+        //console.debug('find index is', user)
+        this.users.splice(user, 1);
+      });
     },
   },
   computed: {
+    areAllSelected() {
+      if(this.selectedUserIDs.length == this.users.length){
+        return true;
+      }else{
+        return false;
+      }
+    },
     actionButtonDisabled(){
       if(this.selectedUserIDs.length > 0){
           return false;
