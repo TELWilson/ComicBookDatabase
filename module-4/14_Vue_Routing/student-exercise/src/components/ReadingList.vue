@@ -11,7 +11,15 @@ export default {
     name: 'reading-list',
     components: {
         BookCard
-    }
+    },
+    props: {
+      isbn: Number,
+    },
+    computed: {
+      book() {
+        return this.$store.state.books.find(b => b.isbn == this.isbn)
+      }
+    },
 }
 </script>
 
