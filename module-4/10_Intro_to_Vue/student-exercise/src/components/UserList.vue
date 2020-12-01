@@ -43,23 +43,23 @@ export default {
       let user = this.users;
 
       if(this.filt.firstName){
-        user = user.filter(n => n.firstName.toLowerCase().includes(this.filt.firstName));
+        user = user.filter(n => n.firstName.toLowerCase().includes(this.filt.firstName.toLowerCase()));
       }
 
       if(this.filt.lastName){
-        user = user.filter(n => n.lastName.toLowerCase().includes(this.filt.lastName));
+        user = user.filter(n => n.lastName.toLowerCase().includes(this.filt.lastName.toLowerCase()));
       }
 
       if(this.filt.username){
-        user = user.filter(n => n.username.toLowerCase().includes(this.filt.username));
+        user = user.filter(n => n.username.toLowerCase().includes(this.filt.username.toLowerCase()));
       }
 
       if(this.filt.emailAddress){
-        user = user.filter(n => n.emailAddress.toLowerCase().includes(this.filt.emailAddress));
+        user = user.filter(n => n.emailAddress.toLowerCase().includes(this.filt.emailAddress.toLowerCase()));
       }
 
       if(this.filt.status){
-        user = user.filter(n => n.status.toLowerCase().includes(this.filt.status));
+        user = user.filter(n => n.status ===this.filt.status);
       }
       
       return user;
