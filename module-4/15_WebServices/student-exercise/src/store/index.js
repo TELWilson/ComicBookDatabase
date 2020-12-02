@@ -34,6 +34,21 @@ export default new Vuex.Store({
     SET_ACTIVE_MESSAGE(state, data) {
       state.activeMessage = data;
     },
+    ADD_TOPIC(state, payload) {
+      state.topics.push(payload);
+    },
+    UPDATE_TOPIC(state, payload) {
+      const index = state.topics.findIndex(t => t.id === payload.id);
+
+      if(index >= 0) {
+        state.topics.splice(index, 1, payload)
+      }
+    },
+    DELETE_TOPIC(state, id) {
+      state.activeTopic.topics.splice(
+        state.activeTopic.topics.findIndex(topic => topic.id === id), 1
+      )
+    }
   },
   actions: {
   },
