@@ -43,3 +43,9 @@ h2{
 input{
     margin-bottom: 15px;
 }
+section > h2 {
+    text-decoration: underline;
+}
+h1 {
+    text-align: center;
+}
