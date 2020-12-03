@@ -32,9 +32,17 @@ export default {
     topicId: Number
   },
   methods: {
-    deleteMessage(id) {}
+    deleteMessage(id) {
+      messageService.deleteMessage(id, this.message)
+      .then(response => {
+        if(response.status === 200) {
+          this.$store.commit("DELETE_MESSAGE", id);
+        }
+      })
+    }
   },
   created() {
+    console.debug(this.topicId)
     topicService
       .get(this.topicId)
       .then(response => {
